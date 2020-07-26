@@ -5,6 +5,7 @@ extends KinematicBody2D
 # properties
 export var movespeed = 100
 export var jumpforce = 300
+export var fallforce = -240
 
 var _momentum = Vector2.ZERO
 var _hopping = false
@@ -55,6 +56,8 @@ func _vertical_movement():
 					_momentum.y = -jumpforce
 			true:
 				var _e = get_tree().change_scene("res://Interactable/Shop.tscn")
+	elif Input.is_action_just_released("ui_accept") and _momentum.y < -jumpforce/2:
+		_momentum.y = -jumpforce/4
 
 
 func _dig():
@@ -66,6 +69,7 @@ func _move():
 
 
 func _on_Hurtbox_body_entered(body):
+	GameController.death()
 	_alive = false
 	animationPlayer.stop()
 	sprite.hide()

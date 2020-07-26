@@ -36,16 +36,16 @@ func _on_ShovelButton_pressed():
 
 
 func _on_CandleButton_pressed():
-	if GameController.candle == false and GameController.carrots >= 10:
+	if GameController.candle == false and GameController.carrots >= 25:
 		GameController.candle = true
-		_purchase(10)
+		_purchase(25)
 		candleButton.text = PURCHASED
 
 
 func _on_HaloButton_pressed():
-	if GameController.halo == false and GameController.carrots >= 15:
+	if GameController.halo == false and GameController.carrots >= 10:
 		GameController.halo = true
-		_purchase(15)
+		_purchase(10)
 		haloButton.text = PURCHASED
 
 

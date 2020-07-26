@@ -3,6 +3,7 @@ extends Node
 
 # properties
 var carrots = 0
+var deaths = 0
 var shovel = false
 var candle = false
 var halo = false
@@ -15,6 +16,10 @@ var near_shop = false
 func victory():
 	victorious = true
 
+
+func death():
+	deaths += 1
+	Signals.emit_signal("death")
 
 # private methods
 func update_carrot_count(amount):
