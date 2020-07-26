@@ -11,7 +11,7 @@ onready var light = $Rabbit/Light2D
 func _ready():
 	var _e = Signals.connect("rabbit_dig", self, "_update_tilemap")
 	camera.current = true
-	light.enabled = true
+	light.enabled = false if GameController.candle else true
 
 
 func _update_tilemap():

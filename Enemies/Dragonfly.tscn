@@ -39,14 +39,16 @@ height = 4.0
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 72, 36 )
 
-[node name="Dragonfly" type="KinematicBody2D"]
+[node name="Dragonfly" type="KinematicBody2D" groups=[
+"mortal",
+]]
 collision_layer = 2147483652
 collision_mask = 5
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

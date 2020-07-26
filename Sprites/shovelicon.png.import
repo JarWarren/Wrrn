@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/death.png-b6e46378861e1266e5580c266242a8fa.stex"
+path="res://.import/shovelicon.png-249e7e41df11381a30038ffdebda2549.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/death.png"
-dest_files=[ "res://.import/death.png-b6e46378861e1266e5580c266242a8fa.stex" ]
+source_file="res://Sprites/shovelicon.png"
+dest_files=[ "res://.import/shovelicon.png-249e7e41df11381a30038ffdebda2549.stex" ]
 
 [params]
 

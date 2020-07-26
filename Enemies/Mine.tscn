@@ -5,7 +5,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.06226
 
-[node name="Mine" type="StaticBody2D"]
+[node name="Mine" type="StaticBody2D" groups=[
+"mortal",
+]]
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -8,22 +8,28 @@ export var jumpforce = 300
 
 var _momentum = Vector2.ZERO
 var _hopping = false
+var _alive = true
+var _deathTimer = Timer.new()
 
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
+onready var deathSplat = $DeathSplat
 
 
 # override methods
 func _ready():
+	_deathTimer.connect("timeout", self, "_on_deathTimer_timeout")
+	add_child(_deathTimer)
 	if GameController.victorious:
 		sprite.modulate = Color(1, 0.9, 0)
 
 
 func _process(_delta):
-	_horizontal_movement()
-	_vertical_movement()
-	_dig()
-	_move()
+	if _alive:
+		_horizontal_movement()
+		_vertical_movement()
+		_dig()
+		_move()
 
 
 # private methods
@@ -43,7 +49,12 @@ func _horizontal_movement():
 func _vertical_movement():
 	_momentum.y -= Constants.GRAVITY
 	if Input.is_action_just_pressed("ui_accept"):
-		_momentum.y = -jumpforce
+		match GameController.near_shop:
+			false:
+				if is_on_floor() or GameController.halo:
+					_momentum.y = -jumpforce
+			true:
+				var _e = get_tree().change_scene("res://Interactable/Shop.tscn")
 
 
 func _dig():
@@ -54,5 +65,16 @@ func _move():
 	_momentum = move_and_slide(_momentum, Vector2.UP)
 
 
-func _on_Hurtbox_body_entered(_body):
+func _on_Hurtbox_body_entered(body):
+	_alive = false
+	animationPlayer.stop()
+	sprite.hide()
+	deathSplat.show()
+	_deathTimer.start(1)
+	if body.is_in_group("mortal"):
+		body.queue_free()
+
+
+func _on_deathTimer_timeout():
 	var _o = get_tree().change_scene("res://World/Overworld.tscn")
+	GameController.overworld = true

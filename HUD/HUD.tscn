@@ -13,6 +13,7 @@ margin_right = 51.0
 margin_bottom = 16.0
 rect_scale = Vector2( 1, 0.7 )
 text = "0"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -23,6 +24,21 @@ margin_top = 1.0
 margin_right = 11.0
 margin_bottom = 9.0
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="RichTextLabel" parent="."]
+modulate = Color( 0.247059, 0.2, 0.2, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -120.0
+margin_bottom = 49.0
+rect_scale = Vector2( 1, 0.7 )
+text = "Move - arrow keys
+Jump/Shop - space
+Dig - X "
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
