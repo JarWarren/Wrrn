@@ -21,6 +21,11 @@ func death():
 	deaths += 1
 	Signals.emit_signal("death")
 
+
+func completed():
+	return shovel and candle and halo and victorious
+
+
 # private methods
 func update_carrot_count(amount):
 	carrots += amount

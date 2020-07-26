@@ -26,6 +26,8 @@ func _ready():
 	candleIcon.visible = GameController.candle
 	
 	instructionsLabel.visible = GameController.overworld
+	if GameController.completed():
+		instructionsLabel.text = "                    100%"
 
 
 # private methods

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Warren"
-run/main_scene="res://World/Overworld.tscn"
+run/main_scene="res://UI/TitleScreen.tscn"
 
 [autoload]
 

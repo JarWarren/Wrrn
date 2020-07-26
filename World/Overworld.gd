@@ -6,20 +6,20 @@ onready var rabbit = $Rabbit
 onready var camera = $Rabbit/Camera2D
 onready var light = $Rabbit/Light2D
 onready var decoration = $Decoration
+onready var reaper = $Reaper
 
-
-# Called when the node enters the scene tree for the first time.
+# override methods
 func _ready():
 	camera.current = false
 	light.enabled = false
 	if GameController.deaths >= 20:
-		decoration.texture = load("res://Sprites/reaper.png")
+		reaper.visible = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
+# private methods
 func _on_Area2D_body_entered(_body):
 	GameController.near_shop = true
+
+
+func _on_Area2D_body_exited(_body):
+	GameController.near_shop = false

@@ -17,6 +17,7 @@ position = Vector2( -44, 0 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 collision_layer = 4
+collision_mask = 2048
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 texture = ExtResource( 1 )

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Sprites/overworldbackground.png" type="Texture" id=1]
-[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Rabbit/Rabbit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/reaper.png" type="Texture" id=4]
 [ext_resource path="res://World/Warren.gd" type="Script" id=5]
 [ext_resource path="res://World/Overworld.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/warren.png" type="Texture" id=7]
@@ -16,6 +17,23 @@ extents = Vector2( 112, 16 )
 extents = Vector2( 24, 24 )
 
 [sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="Animation" id=4]
+resource_name = "reaperhover"
+length = 1.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Reaper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 216, 112 ), Vector2( 216, 113 ), Vector2( 216, 114 ), Vector2( 216, 113 ), Vector2( 216, 112 ), Vector2( 216, 111 ), Vector2( 216, 110 ), Vector2( 216, 111 ) ]
+}
 
 [node name="Overworld" type="Node"]
 script = ExtResource( 6 )
@@ -54,6 +72,12 @@ shape = SubResource( 2 )
 position = Vector2( 264, 144 )
 texture = ExtResource( 8 )
 
+[node name="Reaper" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.486275 )
+position = Vector2( 216, 112.5 )
+texture = ExtResource( 4 )
+
 [node name="Rabbit" parent="." instance=ExtResource( 3 )]
 position = Vector2( 104, 144 )
 
@@ -70,5 +94,10 @@ position = Vector2( 232, 152 )
 texture = ExtResource( 7 )
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "reaperhover"
+anims/reaperhover = SubResource( 4 )
 [connection signal="body_entered" from="Shop/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Shop/Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Warren" to="Warren" method="_on_Warren_body_entered"]
