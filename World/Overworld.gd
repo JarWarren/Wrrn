@@ -18,6 +18,7 @@ func _ready():
 		reaper.visible = true
 	if GameController.shovel and GameController.halo and GameController.candle:
 		soldOutSign.visible = true
+	BackgroundMusicPlayer.change_to_overworld()
 
 
 func _process(_delta):

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Blue_Dot_Sessions_-_02_-_Rabbit_Hole.ogg-33ea32d7799715df361c30754dbb62b6.oggstr"
+
+[deps]
+
+source_file="res://Audio/Blue_Dot_Sessions_-_02_-_Rabbit_Hole.ogg"
+dest_files=[ "res://.import/Blue_Dot_Sessions_-_02_-_Rabbit_Hole.ogg-33ea32d7799715df361c30754dbb62b6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

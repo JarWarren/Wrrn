@@ -12,6 +12,7 @@ func _ready():
 	var _e = Signals.connect("rabbit_dig", self, "_update_tilemap")
 	camera.current = true
 	light.enabled = false if GameController.candle else true
+	BackgroundMusicPlayer.change_to_underworld()
 
 
 func _update_tilemap():

@@ -25,7 +25,7 @@ func _ready():
 	featherIcon.visible = GameController.halo
 	candleIcon.visible = GameController.candle
 	
-	instructionsLabel.visible = GameController.overworld
+	instructionsLabel.visible = GameController.overworld or GameController.completed()
 	if GameController.completed():
 		instructionsLabel.text = "                    100%"
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SPCZ_-_10_-_Ground.ogg-7e769f6bf6c96298f4b242c21bba9b6a.oggstr"
+
+[deps]
+
+source_file="res://Audio/SPCZ_-_10_-_Ground.ogg"
+dest_files=[ "res://.import/SPCZ_-_10_-_Ground.ogg-7e769f6bf6c96298f4b242c21bba9b6a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
