@@ -7,6 +7,8 @@ onready var camera = $Rabbit/Camera2D
 onready var light = $Rabbit/Light2D
 onready var decoration = $Decoration
 onready var reaper = $Reaper
+onready var soldOutSign = $Shop/SoldOutSign
+onready var background = $Background
 
 # override methods
 func _ready():
@@ -14,6 +16,15 @@ func _ready():
 	light.enabled = false
 	if GameController.deaths >= 20:
 		reaper.visible = true
+	if GameController.shovel and GameController.halo and GameController.candle:
+		soldOutSign.visible = true
+
+
+func _process(_delta):
+	if background.position.x >= -320:
+		background.position.x -= 0.1
+	else:
+		background.position.x = 0
 
 
 # private methods

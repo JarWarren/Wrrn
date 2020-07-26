@@ -7,7 +7,6 @@
 [ext_resource path="res://Sprites/feather.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/candleicon.png" type="Texture" id=6]
 
-
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 2 )
 
@@ -90,11 +89,13 @@ modulate = Color( 0.490196, 0.0705882, 0.0705882, 1 )
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -120.0
-margin_bottom = 49.0
+margin_bottom = 79.0
 rect_scale = Vector2( 1, 0.7 )
 text = "Move - arrow keys
-Jump/Shop - space
-Dig - X "
+Jump - space
+Shop - space
+Dig - X 
+Mute - M"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

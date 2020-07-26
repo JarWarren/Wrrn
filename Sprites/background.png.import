@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/overworldbackground.png-ca9cba39759b590a18f1e547023fbd2c.stex"
+path="res://.import/background.png-4fa92766cad903a1a79b587b09bd47c5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/overworldbackground.png"
-dest_files=[ "res://.import/overworldbackground.png-ca9cba39759b590a18f1e547023fbd2c.stex" ]
+source_file="res://Sprites/background.png"
+dest_files=[ "res://.import/background.png-4fa92766cad903a1a79b587b09bd47c5.stex" ]
 
 [params]
 
