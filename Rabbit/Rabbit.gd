@@ -13,6 +13,12 @@ onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
 
 
+# override methods
+func _ready():
+	if GameController.victorious:
+		sprite.modulate = Color(1, 0.9, 0)
+
+
 func _process(_delta):
 	_horizontal_movement()
 	_vertical_movement()

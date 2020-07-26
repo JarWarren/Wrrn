@@ -16,4 +16,4 @@ func _ready():
 #	pass
 
 func _on_Warren_body_entered(_body):
-	var _o = get_tree().change_scene("res://World/Underworld.tscn")
+	var _e = get_tree().change_scene("res://World/Underworld.tscn")

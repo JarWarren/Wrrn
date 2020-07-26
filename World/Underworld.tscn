@@ -1,13 +1,17 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://World/Underworld.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/cave_tileset.png" type="Texture" id=2]
 [ext_resource path="res://Rabbit/Rabbit.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Carrot/Carrot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Interactable/Carrot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/entrance.png" type="Texture" id=5]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Spiderweb.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemies/Dragonfly.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/Slime.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemies/Boulder.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Enemies/Mine.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Interactable/Portal.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 1500 )
@@ -478,6 +482,9 @@ script = ExtResource( 1 )
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
+[node name="Slime" parent="." instance=ExtResource( 9 )]
+position = Vector2( 24, 168 )
+
 [node name="Map" type="Node" parent="."]
 
 [node name="Entrance" type="Sprite" parent="Map"]
@@ -531,8 +538,29 @@ position = Vector2( 137, 320 )
 [node name="Spiderweb4" parent="Spiderwebs" instance=ExtResource( 7 )]
 position = Vector2( 137, 384 )
 
+[node name="Dragonflies" type="Node" parent="."]
+
+[node name="Dragonfly" parent="Dragonflies" instance=ExtResource( 8 )]
+position = Vector2( 170, 104 )
+
+[node name="Portal" parent="." instance=ExtResource( 12 )]
+position = Vector2( 288, 32 )
+
 [node name="Rabbit" parent="." instance=ExtResource( 3 )]
 position = Vector2( 231, -8 )
 
-[node name="Dragonfly" parent="." instance=ExtResource( 8 )]
-position = Vector2( 170, 104 )
+[node name="Boulder" parent="." instance=ExtResource( 10 )]
+
+[node name="StartPosition" parent="Boulder" index="0"]
+position = Vector2( 344, 232 )
+
+[node name="EndPosition" parent="Boulder" index="1"]
+position = Vector2( -32, 232 )
+
+[node name="KinematicBody2D" parent="Boulder" index="2"]
+position = Vector2( 344, 232 )
+
+[node name="Mine" parent="." instance=ExtResource( 11 )]
+position = Vector2( 88, 48 )
+
+[editable path="Boulder"]
