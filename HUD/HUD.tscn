@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/hudcarrot.png" type="Texture" id=1]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="CarrotCount" type="RichTextLabel" parent="."]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 51.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 0.7 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CarrotIcon" type="TextureRect" parent="."]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 11.0
+margin_bottom = 9.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
