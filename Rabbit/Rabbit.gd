@@ -5,7 +5,6 @@ extends KinematicBody2D
 # properties
 export var movespeed = 100
 export var jumpforce = 300
-export var fallforce = -240
 
 var _momentum = Vector2.ZERO
 var _hopping = false
