@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 # constants
+const GRAVITY = -9.8
 
 # properties
 export var movespeed = 100
@@ -47,11 +48,11 @@ func _horizontal_movement():
 		
 
 func _vertical_movement():
-	_momentum.y -= Constants.GRAVITY
+	_momentum.y -= GRAVITY
 	if Input.is_action_just_pressed("ui_accept"):
 		match GameController.near_shop:
 			false:
-				if is_on_floor() or GameController.halo:
+				if is_on_floor() or GameController.feather:
 					_momentum.y = -jumpforce
 			true:
 				var _e = get_tree().change_scene("res://Interactable/Shop.tscn")

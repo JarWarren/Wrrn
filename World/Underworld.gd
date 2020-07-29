@@ -1,6 +1,5 @@
 extends Node
 
-
 # properties
 onready var rabbit = $Rabbit
 onready var camera = $Rabbit/Camera2D
@@ -15,6 +14,7 @@ func _ready():
 	BackgroundMusicPlayer.change_to_underworld()
 
 
+# private mtehods
 func _update_tilemap():
 	var cell_position = tilemap.world_to_map(rabbit.position)
 	tilemap.set_cellv(cell_position + Vector2(0, 1), -1)

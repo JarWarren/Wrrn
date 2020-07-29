@@ -1,7 +1,6 @@
 extends Node
 
-
-# Declare member variables here. Examples:
+# properties
 onready var rabbit = $Rabbit
 onready var camera = $Rabbit/Camera2D
 onready var light = $Rabbit/Light2D
@@ -16,7 +15,7 @@ func _ready():
 	light.enabled = false
 	if GameController.deaths >= 20:
 		reaper.visible = true
-	if GameController.shovel and GameController.halo and GameController.candle:
+	if GameController.shovel and GameController.feather and GameController.candle:
 		soldOutSign.visible = true
 	BackgroundMusicPlayer.change_to_overworld()
 

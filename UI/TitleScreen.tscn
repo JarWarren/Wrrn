@@ -25,7 +25,6 @@ __meta__ = {
 }
 
 [node name="Particles2D" type="Particles2D" parent="."]
-visible = false
 position = Vector2( 320, -64 )
 rotation = 0.785398
 amount = 12

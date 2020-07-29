@@ -11,6 +11,7 @@
 script = ExtResource( 2 )
 
 [node name="CarrotCount" type="RichTextLabel" parent="."]
+modulate = Color( 0.207843, 0.698039, 0.207843, 1 )
 margin_left = 11.0
 margin_top = 1.0
 margin_right = 51.0
@@ -23,6 +24,7 @@ __meta__ = {
 }
 
 [node name="DeathCount" type="RichTextLabel" parent="."]
+modulate = Color( 1, 0, 0, 1 )
 margin_left = 11.0
 margin_top = 11.0
 margin_right = 48.0
@@ -85,7 +87,7 @@ __meta__ = {
 }
 
 [node name="Instructions" type="RichTextLabel" parent="."]
-modulate = Color( 0.490196, 0.0705882, 0.0705882, 1 )
+modulate = Color( 1, 0.498039, 0, 1 )
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -120.0

@@ -8,7 +8,7 @@ const UNDERWORLD_THEME = preload("res://Audio/SPCZ_-_10_-_Ground.ogg")
 var paused = false
 var bookmark = 0
 
-# Called when the node enters the scene tree for the first time.
+# override methods
 func _ready():
 	autoplay = true
 	stream = OVERWORLD_THEME
@@ -26,6 +26,7 @@ func _process(_delta):
 				paused = true
 
 
+# private methods
 func change_to_overworld():
 	if stream != OVERWORLD_THEME:
 		stream = OVERWORLD_THEME

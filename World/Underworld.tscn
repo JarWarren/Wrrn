@@ -273,8 +273,56 @@ position = Vector2( 248, 376 )
 [node name="Carrot6" parent="Carrots" instance=ExtResource( 4 )]
 position = Vector2( 24, 1688 )
 
+[node name="Carrot12" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 56, 1640 )
+
+[node name="Carrot15" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 71, 1672 )
+
+[node name="Carrot16" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 88, 1704 )
+
+[node name="Carrot22" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 100, 1704 )
+
+[node name="Carrot23" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 112, 1704 )
+
+[node name="Carrot24" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 124, 1704 )
+
+[node name="Carrot13" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 40, 1608 )
+
+[node name="Carrot14" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 24, 1576 )
+
 [node name="Carrot11" parent="Carrots" instance=ExtResource( 4 )]
 position = Vector2( 296, 1688 )
+
+[node name="Carrot17" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 232, 1704 )
+
+[node name="Carrot25" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 196, 1704 )
+
+[node name="Carrot26" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 208, 1704 )
+
+[node name="Carrot27" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 220, 1704 )
+
+[node name="Carrot18" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 248, 1672 )
+
+[node name="Carrot19" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 264, 1640 )
+
+[node name="Carrot20" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 280, 1608 )
+
+[node name="Carrot21" parent="Carrots" instance=ExtResource( 4 )]
+position = Vector2( 296, 1576 )
 
 [node name="Carrot7" parent="Carrots" instance=ExtResource( 4 )]
 position = Vector2( 96, 168 )
@@ -403,10 +451,10 @@ position = Vector2( 200, 1152 )
 position = Vector2( 8, 1344 )
 
 [node name="Spiderweb10" parent="Spiderwebs" instance=ExtResource( 7 )]
-position = Vector2( 72, 1472 )
+position = Vector2( 48, 1472 )
 
 [node name="Spiderweb11" parent="Spiderwebs" instance=ExtResource( 7 )]
-position = Vector2( 200, 1472 )
+position = Vector2( 224, 1471.33 )
 
 [node name="Spiderweb9" parent="Spiderwebs" instance=ExtResource( 7 )]
 position = Vector2( 264, 1344 )

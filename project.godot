@@ -20,7 +20,6 @@ run/main_scene="res://UI/TitleScreen.tscn"
 
 [autoload]
 
-Constants="*res://Singletons/Constants.gd"
 GameController="*res://Singletons/GameController.gd"
 Signals="*res://Singletons/Signals.gd"
 BackgroundMusicPlayer="*res://Singletons/BackgroundMusicPlayer.gd"

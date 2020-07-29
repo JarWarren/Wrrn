@@ -19,7 +19,6 @@ func _process(_delta):
 	_momentum = move_and_slide(_momentum)
 
 # private methods
-
 func _idle():
 	_momentum = Vector2.ZERO
 
@@ -28,4 +27,3 @@ func _attack():
 	var direction = (playerDetectionZone.player.global_position - global_position).normalized()
 	_momentum = _momentum.move_toward(movespeed * direction, 100)
 	sprite.flip_h = _momentum.x < 0
-
