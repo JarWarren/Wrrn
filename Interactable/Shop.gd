@@ -6,7 +6,7 @@ const PURCHASED = "Purchased"
 onready var carrotsLabel = $VBoxContainer/Carrots
 onready var shovelButton = $VBoxContainer/ShovelButton
 onready var candleButton = $VBoxContainer/CandleButton
-onready var haloButton = $VBoxContainer/HaloButton
+onready var featherButton = $VBoxContainer/FeatherButton
 onready var backButton = $VBoxContainer/BackButton
 
 # override methods
@@ -16,12 +16,13 @@ func _ready():
 		shovelButton.text = PURCHASED
 	if GameController.candle:
 		candleButton.text = PURCHASED
-	if GameController.halo:
-		haloButton.text = PURCHASED
+	if GameController.feather:
+		featherButton.text = PURCHASED
 	backButton.grab_focus()
 	
 
 
+# private methods
 func _purchase(cost):
 	if GameController.carrots >= cost:
 		GameController.update_carrot_count(-cost)
@@ -42,11 +43,11 @@ func _on_CandleButton_pressed():
 		candleButton.text = PURCHASED
 
 
-func _on_HaloButton_pressed():
-	if GameController.halo == false and GameController.carrots >= 10:
-		GameController.halo = true
+func _on_FeatherButton_pressed():
+	if GameController.feather == false and GameController.carrots >= 10:
+		GameController.feather = true
 		_purchase(10)
-		haloButton.text = PURCHASED
+		featherButton.text = PURCHASED
 
 
 func _on_BackButton_pressed():

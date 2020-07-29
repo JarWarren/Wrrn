@@ -22,7 +22,7 @@ func _ready():
 	var _f = Signals.connect("death", self, "_update_death_count")
 	
 	shovelIcon.visible = GameController.shovel
-	featherIcon.visible = GameController.halo
+	featherIcon.visible = GameController.feather
 	candleIcon.visible = GameController.candle
 	
 	instructionsLabel.visible = GameController.overworld or GameController.completed()

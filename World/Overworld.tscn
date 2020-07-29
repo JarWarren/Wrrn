@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Sprites/foreground.png" type="Texture" id=1]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=2]
@@ -16,12 +16,20 @@
 extents = Vector2( 112, 16 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 24, 24 )
+extents = Vector2( 10, 96 )
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 96 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "reaperhover"
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 168, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+[sub_resource type="Animation" id=7]
 length = 1.6
 loop = true
 tracks/0/type = "value"
@@ -52,16 +60,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Ground" type="StaticBody2D" parent="."]
+[node name="Limits" type="StaticBody2D" parent="."]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+[node name="Ground0" type="CollisionShape2D" parent="Limits"]
 position = Vector2( 112, 168 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
+[node name="Ground1" type="CollisionShape2D" parent="Limits"]
 position = Vector2( 352, 168 )
 shape = SubResource( 1 )
+
+[node name="LeftWall" type="CollisionShape2D" parent="Limits"]
+position = Vector2( -8, 88 )
+shape = SubResource( 2 )
+
+[node name="RightWall" type="CollisionShape2D" parent="Limits"]
+position = Vector2( 328, 88 )
+shape = SubResource( 3 )
+
+[node name="Sky" type="CollisionShape2D" parent="Limits"]
+position = Vector2( 160, -8 )
+shape = SubResource( 4 )
 
 [node name="Shop" type="Sprite" parent="."]
 position = Vector2( 32, 120 )
@@ -72,7 +92,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shop/Area2D"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="SoldOutSign" type="Sprite" parent="Shop"]
 visible = false
@@ -98,7 +118,7 @@ script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Warren"]
 position = Vector2( 232, 160 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Warren"]
 position = Vector2( 232, 152 )
@@ -108,7 +128,7 @@ texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "reaperhover"
-anims/reaperhover = SubResource( 4 )
+anims/reaperhover = SubResource( 7 )
 [connection signal="body_entered" from="Shop/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Shop/Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Warren" to="Warren" method="_on_Warren_body_entered"]
